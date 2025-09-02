@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'EcoRide Editer : ' ~ book.title %}
+
+{% block body %}
+    {{book.slug}}
+
+    <turbo-frame id="book_{{ book.id }}">
+        {{ form(bookForm, {action: path('book.edit', {id: book.id, slug: book.slug})}) }}
+    </turbo-frame>
+
+{% endblock %}
